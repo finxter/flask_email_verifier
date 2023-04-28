@@ -1,0 +1,26 @@
+<!-- extends is for inheriting from the base.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center my-5">
+          <div class="col-md-5 mt-4">
+              <div class="card">
+                  <h3 class="card-header">Email Verifier</h3>
+                  <div class="card-body">
+                    <form action="." method="POST">
+                      
+                      <div class="input-group">
+                        <input type="text" required class="form-control" name="email-address" placeholder="Enter an email address to verify it">
+                        <div class="input-group-append">
+                          <button class="btn btn-primary fw-bold" type="submit">
+                            Verify
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                      <hr>
+                      {% if response %}
+                      <p>{{ response }}</p>
+                     {% endif %}
+
+{% endblock %}
+
